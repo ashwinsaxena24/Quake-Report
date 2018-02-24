@@ -14,7 +14,46 @@
      limitations under the License.
 -->
 <!-- Layout for a list of earthquakes -->
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_main"/>
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/empty_view"
+        android:visibility="gone"
+        android:text="@string/no_data"/>
+
+    <Button
+        android:visibility="gone"
+        android:background="@android:color/transparent"
+        android:textColor="@color/magnitude1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/retry_button"
+        android:text="@string/retry_connection"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignTop="@+id/empty_view"/>
+
+</RelativeLayout>
